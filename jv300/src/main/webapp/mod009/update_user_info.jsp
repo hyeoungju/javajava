@@ -1,31 +1,17 @@
-<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sign up</title>
+<title>회원정보 변경</title>
 </head>
 <body>
-
-<div id="wrapper">
-	<div id="header">
-		<jsp:include page="/incl/menu.jsp">
-			<jsp:param name="subtitle" value="<%=URLEncoder.encode(\"mod008 : 자바빈즈\",\"UTF-8\") %>"/>
-		</jsp:include>
-	</div>
-	<div id="content-wrapper">
-		<h3>회원가입</h3>
-		<form action="add_user.do" method="post">
-		<div id="header">
-     		<h1>Sign up</h1>
-   		</div>
-    <table class="table_a">
+	<table class="table_a">
         <tr>
           <td>
             <h3>
-              <label for="userId" name="userId">회원 아이디</label>
+              <label for="userId" name="userId" value="">회원 아이디</label>
             </h3>
             <input type="text" class="big" name="userId">
           </td>
@@ -60,7 +46,7 @@
               <label for="year" name="email">이메일</label>
             </h3>
             <div class="input-group">
-              <input type="text" id="email1" name="email1" placeholder="입력하세요"> @
+              <input type="text" maxlength="20" placeholder="입력하세요"> @
               <input type="text" id="email2" name="email2"></input>
             </div>
           </td>
@@ -91,12 +77,5 @@
         	</td>
         </tr>
       </table>
-	</form>
-	</div>
-	<div id="footer">
-		<%@ include file="/incl/footer.jsp" %>
-	</div>
-</div>
-
 </body>
 </html>

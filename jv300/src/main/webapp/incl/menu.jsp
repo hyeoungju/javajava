@@ -7,6 +7,10 @@
 <title>Menu</title>
 </head>
 <body>
-	
+	<header>
+		<form action="alter_user.do" method="post">
+			<button>회원정보 수정</button>
+		</form>
+	</header>
 </body>
 </html>
