@@ -21,6 +21,10 @@ public class Customer {
 	private Date regDate;
 	
 	public Customer() {
-
+		super();
+	}
+	
+	public Customer(long cid) {
+		
 	}
 }
