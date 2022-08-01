@@ -11,11 +11,12 @@ CREATE TABLE Customer(
 SELECT * FROM Customer;
 SELECT count(*) FROM Customer;
 SELECT * FROM Account;
+UPDATE Account SET balance=50000 WHERE aid=3005;
 
 CREATE TABLE Account (
 	aid				BIGINT			PRIMARY KEY AUTO_INCREMENT,
 	customerId		BIGINT			NOT NULL,
-	accountNum		CHAR(9)			NOT NULL,	-- 000-00-0000
+	accountNum		CHAR(12)		NOT NULL,	-- 000-00-0000
 	accType			CHAR(1)			NOT NULL 	DEFAULT 'S',
 	balance			DOUBLE			NOT NULL	DEFAULT  0,
 	interestRate	DOUBLE			NOT NULL 	DEFAULT  0.0,
@@ -25,3 +26,5 @@ CREATE TABLE Account (
 	CONSTRAINT Account_CustomerId_FK 
 		FOREIGN KEY (customerId) REFERENCES Customer(cid)
 )AUTO_INCREMENT = 3001;
+
+DELETE FROM Customer WHERE cid = 1004;
